@@ -1,4 +1,4 @@
-/*#include<iostream>
+*#include<iostream>
 using namespace std;
 
 
@@ -19,11 +19,11 @@ public:
 	
 	
 	
-	NodeList():front(NULL),rear(NULL){}//³õÊ¼»¯
+	NodeList():front(NULL),rear(NULL){}//åˆå§‹åŒ–
 	 
 	
 	
-	void enque(const T& e) {// ÈëÁĞ
+	void enque(const T& e) {// å…¥åˆ—
 		
 		Node<T>* NewNode = new Node<T>  (e);
 		if (empty()) {
@@ -39,7 +39,7 @@ public:
 
 	
 	
-	~NodeList() {//¶ÓÁĞ³·Ïú
+	~NodeList() {//é˜Ÿåˆ—æ’¤é”€
 		while (!empty()) 
 		{
 			deque();
@@ -50,7 +50,7 @@ public:
 	}
 	T deque() {
 		if (empty()) {
-			throw runtime_error("¶ÓÁĞÎª¿Õ£¬ÎŞ·¨²Ù×÷£¡");
+			throw runtime_error("é˜Ÿåˆ—ä¸ºç©ºï¼Œæ— æ³•æ“ä½œï¼");
 		}
 			T value = front->data;
 			Node<T>* temp = front;
@@ -63,7 +63,7 @@ public:
 		return value;
 	}
 
-	//»ñÈ¡¶ÓÁĞ³¤¶È
+	//è·å–é˜Ÿåˆ—é•¿åº¦
 void getlength() {
 		int count = 0;
 		Node<T>* p = front;
@@ -76,17 +76,17 @@ void getlength() {
 	}
 
 
-	//²éÕÒÕûÊıÊÇ·ñÔÚ¶ÓÁĞÖĞ
+	//æŸ¥æ‰¾æ•´æ•°æ˜¯å¦åœ¨é˜Ÿåˆ—ä¸­
 	void findValue(const T& value) {
 		Node<T>* p = front->next;
 		do {
 			if (p->data == value) {
-				cout << "²éÕÒÕûÊıÔÚ¶ÓÁĞÖĞ" << endl;
+				cout << "æŸ¥æ‰¾æ•´æ•°åœ¨é˜Ÿåˆ—ä¸­" << endl;
 				break;
 			}
 			
 		 if (p == NULL) {
-				cout << "Î´²éÕÒµ½Ö¸¶¨Êı×Ö" << endl;
+				cout << "æœªæŸ¥æ‰¾åˆ°æŒ‡å®šæ•°å­—" << endl;
 				break;
 			}
 		 p=p->next;
@@ -95,41 +95,41 @@ void getlength() {
 	}
 
 };
-void menue() {//²Ëµ¥¹¹Ôì
-	cout << "Á´¶ÓÁĞ²Ù×÷²Ëµ¥²Ëµ¥£º" << endl;
-	cout << "  1.¶ÓÁĞ³õÊ¼»¯ " << endl;
-	cout << "  2.Èë¶Ó" << endl;
-	cout << "  3.³ö¶Ó" << endl;
-	cout << "  4.³·ÏúÁ´¶ÓÁĞ" << endl;
-	cout << "  5.Èë¶Ó£¬²¢Êä³ö¶ÓÁĞ³¤¶È£¬Í¬Ê±ÅĞ¶ÏÊäÈëÕûÊıÊÇ·ñÔÚ¶ÓÁĞÖĞ" << endl;
-	cout << "  6.ÍË³öÏµÍ³" << endl;
-	cout << "ÇëÊäÈë¹¦ÄÜÊı×Ö£º" << endl;
+void menue() {//èœå•æ„é€ 
+	cout << "é“¾é˜Ÿåˆ—æ“ä½œèœå•èœå•ï¼š" << endl;
+	cout << "  1.é˜Ÿåˆ—åˆå§‹åŒ– " << endl;
+	cout << "  2.å…¥é˜Ÿ" << endl;
+	cout << "  3.å‡ºé˜Ÿ" << endl;
+	cout << "  4.æ’¤é”€é“¾é˜Ÿåˆ—" << endl;
+	cout << "  5.å…¥é˜Ÿï¼Œå¹¶è¾“å‡ºé˜Ÿåˆ—é•¿åº¦ï¼ŒåŒæ—¶åˆ¤æ–­è¾“å…¥æ•´æ•°æ˜¯å¦åœ¨é˜Ÿåˆ—ä¸­" << endl;
+	cout << "  6.é€€å‡ºç³»ç»Ÿ" << endl;
+	cout << "è¯·è¾“å…¥åŠŸèƒ½æ•°å­—ï¼š" << endl;
 }
 int main() {
 
 	NodeList<int> NodeList;
 	int value;
 	
-	while (true) {//²Ëµ¥¹¦ÄÜÊµÏÖ
+	while (true) {//èœå•åŠŸèƒ½å®ç°
 		menue();
 		int option;
 		cin >> option;
 		switch (option) {
 		case 1:
 			
-			cout << "¶ÓÁĞ³õÊ¼»¯³É¹¦" << endl;
+			cout << "é˜Ÿåˆ—åˆå§‹åŒ–æˆåŠŸ" << endl;
 			break;
 		case 2:
-			cout << "ÇëÊäÈëÈë¶ÓÕûÊı£º" << endl;
+			cout << "è¯·è¾“å…¥å…¥é˜Ÿæ•´æ•°ï¼š" << endl;
 			cin >> value;
 			NodeList.enque(value);
-			cout<<value << "Èë¶Ó³É¹¦" << endl;
+			cout<<value << "å…¥é˜ŸæˆåŠŸ" << endl;
 		
 			break;
 		case 3:
 			try {
 				value=NodeList.deque();
-				cout << value << "³ö¶Ó³É¹¦" << endl;
+				cout << value << "å‡ºé˜ŸæˆåŠŸ" << endl;
 			}
 			catch (runtime_error &e){
 				cout << e.what() << endl;
@@ -138,10 +138,10 @@ int main() {
 		case 4:
 	
 			
-			cout << "Á´¶ÓÁĞ³É¹¦³·Ïú" << endl;
+			cout << "é“¾é˜Ÿåˆ—æˆåŠŸæ’¤é”€" << endl;
 			break;
 		case 5:
-			cout << "ÇëÊäÈëÈë¶ÓÕûÊı" << endl;
+			cout << "è¯·è¾“å…¥å…¥é˜Ÿæ•´æ•°" << endl;
 			while (cin>>value) {
 			
 				NodeList.enque(value);
@@ -149,21 +149,20 @@ int main() {
 					NodeList.deque();
 					break; }
 			}
-			cout << "¶ÓÁĞµÄ³¤¶ÈÎª£º" ;
+			cout << "é˜Ÿåˆ—çš„é•¿åº¦ä¸ºï¼š" ;
 			NodeList.getlength();
 			cout << endl;
-			cout << "ÇëÊäÈëÒª²éÕÒµÄÕûÊı" << endl;
+			cout << "è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„æ•´æ•°" << endl;
 			cin >> value;
 			NodeList.findValue(value);
 			
 			break;
 		case 6:
-			cout << "ÏµÍ³ÍË³ö³É¹¦" << endl;
+			cout << "ç³»ç»Ÿé€€å‡ºæˆåŠŸ" << endl;
 			return 0;
 		default:
-			cout << "²»ÔÚÑ¡Ôñ·¶Î§£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "ä¸åœ¨é€‰æ‹©èŒƒå›´ï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 }
 	}
 	return 0;
 }
-*/
